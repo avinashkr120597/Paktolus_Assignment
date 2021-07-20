@@ -1,0 +1,38 @@
+public static void main(String args[]) {
+      int arr[]=new int[]{1, 3, 5, 2, 6, 2};
+      int x=0;
+      int y=0;
+      String path="x";
+      int i=0;
+      int initialDiff=arr[0];
+      
+      do{
+          System.out.println(x+" "+y);
+          
+          if(i!=1 && (x+y)==initialDiff){
+              System.out.println("Cross the Path"+ " at"+ "x="+x+"and y= "+y);
+          }
+          if(path.equals("x")){
+              
+              path="-y";
+              x=x+arr[i];
+              i++;
+          }
+          else if(path.equals("-y")){
+              path="-x";
+              y=y-arr[i];
+              i++;
+          }
+          else if(path.equals("-x")){
+              path="y";
+              x-=arr[i];
+              i++;
+          }
+          else{
+              path="x";
+              y+=arr[i];
+              i++;
+          }
+      }while(i!=arr.length);
+    }
+    
